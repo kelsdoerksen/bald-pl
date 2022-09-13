@@ -13,6 +13,7 @@ Python implementations of the following active learning algorithms:
 - scikit-learn     1.0.1
 - tqdm             4.62.3
 - ipdb             0.13.9
+- pandas           1.4.4
 
 You can also use the following command to install conda environment
 
