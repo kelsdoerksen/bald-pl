@@ -2,14 +2,7 @@
 
 Python implementations of the following active learning algorithms:
 
-- Random Sampling
-- Least Confidence [1]
-- Margin Sampling [2]
-- Entropy Sampling [3]
-- Uncertainty Sampling with Dropout Estimation [4]
-- Bayesian Active Learning Disagreement [4]
-- Core-Set Selection [5]
-- Adversarial margin [6]
+- Bayesian Active Learning Disagreement [1]
 
 ## Prerequisites 
 
@@ -32,10 +25,10 @@ conda env create -f environment.yml
 ```
   python demo.py \
       --n_round 10 \
-      --n_query 1000 \
+      --n_query 100 \
       --n_init_labeled 10000 \
       --dataset_name MNIST \
-      --strategy_name RandomSampling \
+      --strategy_name BALDDropout \
       --seed 1
 ```
 
@@ -43,7 +36,7 @@ Please refer [here](https://arxiv.org/abs/2111.15258) for more details.
 
 ## Citing
 
-If you use our code in your research or applications, please consider citing our paper.
+Forked from:
 
 ```
 @article{Huang2021deepal,
@@ -56,17 +49,7 @@ If you use our code in your research or applications, please consider citing our
 
 ## Reference
 
-[1] A Sequential Algorithm for Training Text Classifiers, SIGIR, 1994
-
-[2] Active Hidden Markov Models for Information Extraction, IDA, 2001
-
-[3] Active learning literature survey. University of Wisconsin-Madison Department of Computer Sciences, 2009
-
-[4] Deep Bayesian Active Learning with Image Data, ICML, 2017
-
-[5] Active Learning for Convolutional Neural Networks: A Core-Set Approach, ICLR, 2018
-
-[6] Adversarial Active Learning for Deep Networks: a Margin Based Approach, arXiv, 2018
+[1] Deep Bayesian Active Learning with Image Data, ICML, 2017
 
 
 
