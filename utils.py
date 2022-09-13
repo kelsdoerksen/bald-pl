@@ -1,11 +1,8 @@
 from torchvision import transforms
-from handlers import MNIST_Handler, SVHN_Handler, CIFAR10_Handler
-from data import get_MNIST, get_FashionMNIST, get_SVHN, get_CIFAR10
-from nets import Net, MNIST_Net, SVHN_Net, CIFAR10_Net
-from query_strategies import RandomSampling, LeastConfidence, MarginSampling, EntropySampling, \
-                             LeastConfidenceDropout, MarginSamplingDropout, EntropySamplingDropout, \
-                             KMeansSampling, KCenterGreedy, BALDDropout, \
-                             AdversarialBIM, AdversarialDeepFool
+from handlers import MNIST_Handler
+from data import get_MNIST
+from nets import Net, MNIST_Net
+from query_strategies import EntropySampling, EntropySamplingDropout, BALDDropout
 
 params = {'MNIST':
               {'n_epoch': 10, 
@@ -93,7 +90,3 @@ def get_strategy(name):
         return AdversarialDeepFool
     else:
         raise NotImplementedError
-    
-# albl_list = [MarginSampling(X_tr, Y_tr, idxs_lb, net, handler, args),
-#              KMeansSampling(X_tr, Y_tr, idxs_lb, net, handler, args)]
-# strategy = ActiveLearningByLearning(X_tr, Y_tr, idxs_lb, net, handler, args, strategy_list=albl_list, delta=0.1)
